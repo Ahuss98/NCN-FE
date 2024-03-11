@@ -8,7 +8,7 @@ function AllArticles() {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
-    axios.get("http://localhost:9090/api/articles").then((response) => {
+    axios.get("https://ncn-network.onrender.com/api/articles").then((response) => {
         setArticles(response.data.articles);
     });
     }, []);
@@ -19,7 +19,7 @@ function AllArticles() {
         <ul className="list-of-articles">
         {articles.map((article, index) => (
             <Link
-            to={`/items/${article.title}`}
+            to={`/AllArticles/${article.article_id}`}
             key={index}
             className="article-link"
             >
