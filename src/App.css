@@ -1,1 +1,49 @@
+.Page {
+  border: solid black 3px;
+  border-radius: 10px;
+  margin: 10px;
+}
 
+.Page ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 10px; 
+  margin: 5px;
+}
+
+.article-link {
+  border: solid black 1px;
+  color: black;
+  padding: 12px;
+  border-radius: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+.article-link:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+.article-link img {
+  width: 100px;
+  margin-bottom: 10px; 
+  font-weight: bolder;
+}
+nav {
+  border: solid black 3px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around; 
+  padding: 10px;
+  margin: 10px;
+}
+
+h1 {
+  margin: 10px;
+}
