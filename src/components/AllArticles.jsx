@@ -14,7 +14,7 @@ function AllArticles() {
     }, []);
 
     return (
-    <div className="Page">
+    <div className="articles-container">
         <h2>Please select your desired article:</h2>
         <ul className="list-of-articles">
         {articles.map((article, index) => (
