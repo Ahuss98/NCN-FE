@@ -6,6 +6,7 @@ import AllArticles from './components/AllArticles';
 import Header from './components/Header';
 import Nav from './components/Nav'; 
 import SingleArticle from './components/SIngleArticle';
+import SingleComment from './components/SingleComment';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/AllArticles" element={<AllArticles />} />
           <Route path="/AllArticles/:article_id" element={<SingleArticle />} />
+          <Route path="/:article_id/comments/:comment_id" element={<SingleComment/>} />
         </Routes>
       </div>
     </Router>
