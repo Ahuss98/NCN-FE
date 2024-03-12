@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { fetchArticles } from "../utils/api";
 
 function AllArticles() {
     const [articles, setArticles] = useState([])
@@ -10,10 +11,11 @@ function AllArticles() {
 
     useEffect(() => {
         setIsLoading(true)
-        axios.get("https://ncn-network.onrender.com/api/articles").then((response) => {
-        setArticles(response.data.articles);
-        setIsLoading(false)
-    });
+        fetchArticles()
+        .then((data) => {
+            setArticles(data.articles);
+            setIsLoading(false)
+        })
     }, []);
 
     if (isLoading){

@@ -5,10 +5,13 @@ import {
   fetchComments,
   updateArticleVotes,
   postComment,
+  deleteCommentById
 } from "../utils/api";
 
 function SingleArticle() {
   let { article_id } = useParams();
+  const [isDeleted, setIsDeleted] = useState(false)
+  const [deleting,setDeleting] = useState(false)
   const [isPosted,setIsPosted] = useState(false)
   const [posting, setPosting] = useState(false)
   const [newUser, setNewUser] = useState("grumpy19")
@@ -32,46 +35,47 @@ function SingleArticle() {
   useEffect(() => {
     fetchComments(article_id)
       .then((fetchedComments) => {
-        setComments(fetchedComments);
+        setComments(fetchedComments)
       })
       .catch((error) => {
-        console.error("Error fetching comments:", error);
+        console.error("Error fetching comments:", error)
       });
   }, [article_id]);
 
   const increaseArticleVotes = () => {
-    const updatedArticle = { ...article, votes: article.votes + 1 };
-    setArticle(updatedArticle);
+    const updatedArticle = { ...article, votes: article.votes + 1 }
+    setArticle(updatedArticle)
     updateArticleVotes(article_id, 1).catch((error) => {
-      console.error("Error updating article votes:", error);
+      console.error("Error updating article votes:", error)
     });
   };
 
   const decreaseArticleVotes = () => {
-    const updatedArticle = { ...article, votes: article.votes - 1 };
-    setArticle(updatedArticle);
+    const updatedArticle = { ...article, votes: article.votes - 1 }
+    setArticle(updatedArticle)
     updateArticleVotes(article_id, -1).catch((error) => {
-      console.error("Error updating article votes:", error);
+      console.error("Error updating article votes:", error)
     });
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Submitting comment:", newUser, newBody);
-    setPosting(true);
+    event.preventDefault()
+    console.log("Submitting comment:", newUser, newBody)
+    setPosting(true)
     postComment(article_id, newUser, newBody)
       .then((response) => {
-        const updatedComments = [...comments, response];
-        setComments(updatedComments);
-        setNewBody("");
-        setPosting(false);
-        setIsPosted(true);
+        const updatedComments = [...comments, response]
+        setComments(updatedComments)
+        setNewBody("")
+        setPosting(false)
+        setIsPosted(true)
       })
       .catch((error) => {
-        console.error("Error adding comment:", error);
-        setPosting(false);
-      });
-  };
+        console.error("Error adding comment:", error)
+        setPosting(false)
+      })
+  }
+
   useEffect(() => {
     if (isPosted) {
       const timer = setTimeout(() => {
@@ -80,6 +84,28 @@ function SingleArticle() {
       return () => clearTimeout(timer);
     }
   }, [isPosted]);
+
+  const deleteComment = (id) => {
+    setDeleting(true);
+    deleteCommentById(id)
+      .then((response) => {
+        setDeleting(false);
+        setIsDeleted(true);
+        setComments(comments.filter((comment) => comment.comment_id !== id))
+      })
+      .catch((error) => {
+        console.error("Error deleting comment:", error)
+        setDeleting(false)
+      });
+  };
+  useEffect(() => {
+    if (isDeleted) {
+      const timer = setTimeout(() => {
+        setIsDeleted(false)
+      }, 3000); 
+      return () => clearTimeout(timer)
+    }
+  }, [isDeleted]);
 
   if (isLoading){
     return(
@@ -104,8 +130,8 @@ function SingleArticle() {
           </button>
         </div>
       </div>
-      {posting ? (
-          <p className="posting-comment">Posting comment</p>
+      {posting || deleting ? (
+          <p className="Loading">updating Comments</p>
       ) : (
           <>
            {isPosted ? (
@@ -124,13 +150,17 @@ function SingleArticle() {
             />
             <button type="submit">Post Comment</button>
           </form>
-        </div>
+        </div>  {isDeleted ? (
+                 <p className="deleted-message">comment deleted</p>
+            ):(<p></p>)}
       <div className="comment-container">
         {comments.map((comment, index) => (
             <div key={index} className="commentItem">
             <h5>{comment.author}</h5>
             <p>{comment.body}</p>
             <h6>Created at: {new Date(comment.created_at).toLocaleString()}</h6>
+            {console.log(comment.comment_id)}
+            <button onClick={() => deleteComment(comment.comment_id)}>DELETE</button>
           </div>
         ))}
       </div>
