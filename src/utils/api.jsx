@@ -37,11 +37,11 @@ export const fetchTopics = () => {
 export const fetchArticle = (articleId) => {
   return axios.get(`${BASE_URL}${articleId}`)
     .then((response) => {
-      return response.data;
+      return response.data
     })
     .catch((error) => {
       console.error("Error fetching article:", error);
-      throw error;
+      throw error
     });
 };
 
@@ -51,8 +51,8 @@ export const fetchComments = (articleId) => {
       return response.data;
     })
     .catch((error) => {
-      console.error("Error fetching comments:", error);
-      throw error;
+      console.error("Error fetching comments:", error)
+      throw error
     });
 };
 
