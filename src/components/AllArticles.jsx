@@ -5,14 +5,22 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function AllArticles() {
-    const [articles, setArticles] = useState([]);
+    const [articles, setArticles] = useState([])
+    const [isLoading,setIsLoading] = useState(false)
 
     useEffect(() => {
-    axios.get("https://ncn-network.onrender.com/api/articles").then((response) => {
+        setIsLoading(true)
+        axios.get("https://ncn-network.onrender.com/api/articles").then((response) => {
         setArticles(response.data.articles);
+        setIsLoading(false)
     });
     }, []);
 
+    if (isLoading){
+        return(
+            <p className="Loading">LOADING</p>
+        )
+    }
     return (
     <div className="articles-container">
         <h2>Please select your desired article:</h2>

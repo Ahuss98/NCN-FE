@@ -138,10 +138,21 @@ h2 {
   font-size: 12px;
   color: #888;
 }
+.commentItem-New {
+  background-color: burlywood;
+  border: 1px solid #665857;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
 
-.commentItem button {
-  background-color: #007bff;
-  color: #fff;
+.commentItem-New h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.commentItem-New button {
+  background-color: white;
+  color: black;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
@@ -149,10 +160,19 @@ h2 {
   margin-right: 10px;
 }
 
-.commentItem button:hover {
-  background-color: #0056b3;
+.commentItem-New button:hover {
+  background-color: black;
+  color: white;
 }
-
+.commentItem-New input{
+    width: 100%; 
+    min-height: 100px; 
+    padding: 8px; 
+    font-size: 16px; 
+    resize: vertical; 
+    box-sizing: border-box;
+    border-radius: 10px;
+}
 
 .article-link {
   text-decoration: none;
@@ -161,4 +181,49 @@ h2 {
 
 .article-link:hover {
   text-decoration: underline;
+}
+.newComment{
+  margin: 10px;
+  font-size: 14px;
+  color: #666;
+
+}
+
+.posting-comment {
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+}
+.Loading {
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+}
+.posting-comment::after {
+  content: ".";
+  animation: dots 0.5s infinite;
+}
+.Loading::after {
+  content: ".";
+  animation: dots 0.5s infinite;
+}
+
+@keyframes dots {
+  0% {
+    content: ".";
+  }
+  25% {
+    content: "..";
+  }
+  50% {
+    content: "...";
+  }
+  75% {
+    content: "";
+  }
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
 }
