@@ -9,6 +9,7 @@ function Nav() {
     <nav>
             <Link to="/" className={location.pathname === "/" ? "active" : ""}> Home </Link>
             <Link to="/AllArticles" className={location.pathname === "/AllArticles" ? "active" : ""}>View All Articles</Link>
+            <Link to="/Topics" className={location.pathname === "/Topics" ? "active" : ""}>Topics</Link>
     </nav>
     );
 }

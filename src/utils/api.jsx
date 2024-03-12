@@ -13,6 +13,27 @@ export const fetchArticles = ( () => {
       });
 })
 
+export const fetchArticleByTopic = (topic) => {
+    return axios.get(`https://ncn-network.onrender.com/api/articles?topic=${topic}`)
+    .then((response) => {
+        return response.data
+    })
+}
+
+export const fetchSortedArticle = (topic, selectedSort , order ) => {
+    return axios.get(`https://ncn-network.onrender.com/api/articles?topic=${topic}&sort_by=${selectedSort}&order=${order}`)
+    .then((response) => {
+        return response.data
+    })
+}
+
+export const fetchTopics = () => {
+    return axios.get('https://ncn-network.onrender.com/api/topics')
+    .then((response) => {
+        return response.data
+    })
+}
+
 export const fetchArticle = (articleId) => {
   return axios.get(`${BASE_URL}${articleId}`)
     .then((response) => {

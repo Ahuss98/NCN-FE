@@ -1,3 +1,7 @@
+body{
+  background-color: #FFF3D9;
+}
+
 .articles-container {
   border: solid black 3px;
   border-radius: 10px;
@@ -237,4 +241,46 @@ h2 {
 .deleted-message {
   color: red;
   font-weight: bold;
+}
+.topics-container {
+  padding: 10px;
+  margin: 10px;
+  font-size: 30px;
+}
+
+.topics-container ul {
+  display: grid;
+  line-height: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10%;
+}
+
+.topics-container li {
+}
+
+.topics-container a {
+  text-decoration: none;
+  border-radius: 4px;
+  color: #dc4731;
+}
+
+.topics-container a:hover {
+  text-decoration: overline;
+  background-color: #dc4731; 
+  color: #fff3d9; 
+}
+.selected {
+  background-color: #dc4731;
+  color: white;
+  border: 1px solid #333;
+}
+
+.dropdown button {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown button.selected {
+  background-color: #dc4731;
+  color: white;
 }

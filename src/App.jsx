@@ -7,6 +7,9 @@ import Header from './components/Header';
 import Nav from './components/Nav'; 
 import SingleArticle from './components/SIngleArticle';
 import SingleComment from './components/SingleComment';
+import Topics from './components/Topics';
+import ArticleByTopic from './components/articleByTopic';
+
 
 function App() {
   return (
@@ -19,6 +22,8 @@ function App() {
           <Route path="/AllArticles" element={<AllArticles />} />
           <Route path="/AllArticles/:article_id" element={<SingleArticle />} />
           <Route path="/:article_id/comments/:comment_id" element={<SingleComment/>} />
+          <Route path='/Topics' element={<Topics/>}/>
+          <Route path='/Topics/:topic' element={<ArticleByTopic/>}/>
         </Routes>
       </div>
     </Router>
