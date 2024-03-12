@@ -5,22 +5,22 @@ import { fetchArticleByTopic,fetchSortedArticle } from "../utils/api";
 
 function ArticleByTopic() {
   let { topic } = useParams();
-  const [articleList, setArticleList] = useState([]);
-  const [sortOptions, setSortOptions] = useState(["created_at", "votes"]);
-  const [selectedSort, setSelectedSort] = useState("created_at");
-  const [isLoading, setIsLoading] = useState(false);
-  const [order, setOrder] = useState("DESC");
+  const [articleList, setArticleList] = useState([])
+  const [sortOptions, setSortOptions] = useState(["created_at", "votes"])
+  const [selectedSort, setSelectedSort] = useState("created_at")
+  const [isLoading, setIsLoading] = useState(false)
+  const [order, setOrder] = useState("DESC")
 
   useEffect(() => {
     setIsLoading(true)
     fetchArticleByTopic(topic)
       .then((response) => {
-        setIsLoading(false);
+        setIsLoading(false)
         setArticleList(response.articles);
       })
       .catch((error) => {
         console.error("Error fetching articles:", error);
-        setIsLoading(false);
+        setIsLoading(false)
       });
   }, [topic]);
 
@@ -28,25 +28,25 @@ function ArticleByTopic() {
     setIsLoading(true)
     fetchSortedArticle(topic,selectedSort,order)
       .then((response) => {
-        setIsLoading(false);
+        setIsLoading(false)
         setArticleList(response.articles);
       })
       .catch((error) => {
         console.error("Error fetching sorted articles:", error);
-        setIsLoading(false);
+        setIsLoading(false)
       });
-  }, [selectedSort, order, topic]);
+  }, [selectedSort, order, topic])
 
   const handleSortChange = (event) => {
-    setSelectedSort(event.target.value);
+    setSelectedSort(event.target.value)
   };
 
   const handleOrderChange = (newOrder) => {
-    setOrder(newOrder);
-  };
+    setOrder(newOrder)
+  }
 
   if (isLoading) {
-    return <p className="Loading">LOADING</p>;
+    return <p className="Loading">LOADING</p>
   }
 
   return (
