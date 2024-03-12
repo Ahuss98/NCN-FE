@@ -14,19 +14,16 @@
 }
 
 .article-link {
-  border: solid black 1px;
   color: black;
   padding: 12px;
   border-radius: 10px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   transition: color 0.3s ease;
 }
 .article-link:hover {
-  color: blue;
+  color: white;
+  background-color: black;
   text-decoration: none;
 }
 
@@ -43,8 +40,28 @@ nav {
   padding: 10px;
   margin: 10px;
 }
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: white;
+  background-color: black;
+}
+
+nav a.active {
+  color: white;
+  background-color: black;
+}
 
 h1 {
+  margin: 10px;
+}
+
+h2 {
   margin: 10px;
 }
 
@@ -55,7 +72,19 @@ h1 {
   margin-bottom: 20px;
   margin: 10px;
 }
+.singleArticle button {
+  background-color: burlywood;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
 
+.singleArticle button:hover {
+  background-color: black;
+}
 .singleArticle img {
   max-width: 100%;
   height: auto;

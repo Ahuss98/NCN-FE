@@ -1,4 +1,4 @@
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -26,23 +26,19 @@ function SingleArticle() {
       });
   }, [article_id]);
 
-  function increaseVotes(comment) {
-    const updatedComments = comments.map((singleComment) => {
-      if (singleComment.comment_id === comment.comment_id) {
-        return { ...singleComment, votes: singleComment.votes + 1 };
-      }
-      return singleComment;
-    });
-    setComments(updatedComments);
+  function increaseArticleVotes() {
+    const updatedArticle = { ...article, votes: article.votes + 1 };
+    setArticle(updatedArticle);
+    axios.patch(`https://ncn-network.onrender.com/api/articles/${article_id}`,{
+        "inc_votes": 1})
   }
-  function decreaseVotes(comment) {
-    const updatedComments = comments.map((singleComment) => {
-      if (singleComment.comment_id === comment.comment_id) {
-        return { ...singleComment, votes: singleComment.votes - 1 };
-      }
-      return singleComment;
-    });
-    setComments(updatedComments);
+
+  function decreaseArticleVotes() {
+    const updatedArticle = { ...article, votes: article.votes - 1 };
+    setArticle(updatedArticle);
+    axios.patch(`https://ncn-network.onrender.com/api/articles/${article_id}`,{
+        "inc_votes":-1
+    })
   }
 
   return (
@@ -53,28 +49,23 @@ function SingleArticle() {
         <h3>Author: {article.author}</h3>
         <p>{article.body}</p>
         <h4>Created at: {article.created_at}</h4>
+        <div className="vote-container">
+          <p>Current Votes: {article.votes}</p>
+          <button className="vote-button" onClick={increaseArticleVotes}>+1</button>
+          <button className="vote-button" onClick={decreaseArticleVotes}>-1</button>
+        </div>
       </div>
       <div className="comment-container">
         {comments.map((comment, index) => (
-          <Link
-            to={`/AllArticles/${article.article_id}`}
-            key={index}
-            className="article-link"
-          >
-            <li className="commentItem">
-              <h5>{comment.author}</h5>
-              <p>{comment.body}</p>
-              <h6>Created at: {comment.created_at}</h6>
-              <div className="vote-container">
-                <p>Current Votes: {comment.votes}</p>
-                <button className="vote-button" onClick={() => increaseVotes(comment)}>+1</button>
-                <button className="vote-button" onClick={() => decreaseVotes(comment)}>-1</button>
-              </div>
-            </li>
-          </Link>
+          <div key={index} className="commentItem">
+            <h5>{comment.author}</h5>
+            <p>{comment.body}</p>
+            <h6>Created at: {comment.created_at}</h6>
+          </div>
         ))}
       </div>
     </>
   );
 }
+
 export default SingleArticle;
