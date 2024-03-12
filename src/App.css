@@ -123,6 +123,13 @@ h2 {
   padding: 15px;
   margin-bottom: 15px;
 }
+.commentItem button{
+  font-weight: bold;
+  border-radius: 4px;
+}
+.commentItem button:hover {
+  background-color: rgb(248, 108, 108);
+}
 
 .commentItem h5 {
   font-size: 16px;
@@ -225,5 +232,9 @@ h2 {
 
 .success-message {
   color: green;
+  font-weight: bold;
+}
+.deleted-message {
+  color: red;
   font-weight: bold;
 }
