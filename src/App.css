@@ -1,284 +1,283 @@
-body{
-  background-color: #FFF3D9;
+body {
+	background-color: #fff3d9;
 }
 
 .articles-container {
-  border: solid black 3px;
-  border-radius: 10px;
-  margin: 10px;
+	border: solid black 3px;
+	border-radius: 10px;
+	margin: 10px;
 }
 
 .articles-container ul {
-  list-style-type: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-  gap: 10px; 
-  margin: 5px;
+	list-style-type: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 10px;
+	margin: 5px;
 }
 
 .article-link {
-  color: black;
-  padding: 12px;
-  border-radius: 10px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-decoration: none;
-  transition: color 0.3s ease;
+	color: black;
+	padding: 12px;
+	border-radius: 10px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	text-decoration: none;
+	transition: color 0.3s ease;
 }
 .article-link:hover {
-  color: white;
-  background-color: black;
-  text-decoration: none;
+	color: white;
+	background-color: black;
+	text-decoration: none;
 }
 
 .article-link img {
-  width: 100px;
-  margin-bottom: 10px; 
-  font-weight: bolder;
+	width: 100px;
+	margin-bottom: 10px;
+	font-weight: bolder;
 }
 nav {
-  border: solid black 3px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-around; 
-  padding: 10px;
-  margin: 10px;
+	border: solid black 3px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-around;
+	padding: 10px;
+	margin: 10px;
 }
 nav a {
-  text-decoration: none;
-  color: #333;
-  padding: 10px;
-  border-radius: 5px;
-  transition: color 0.3s ease;
+	text-decoration: none;
+	color: #333;
+	padding: 10px;
+	border-radius: 5px;
+	transition: color 0.3s ease;
 }
 nav a:hover {
-  color: white;
-  background-color: black;
+	color: white;
+	background-color: black;
 }
 
 nav a.active {
-  color: white;
-  background-color: black;
+	color: white;
+	background-color: black;
 }
 
 h1 {
-  margin: 10px;
+	margin: 10px;
 }
 
 h2 {
-  margin: 10px;
+	margin: 10px;
 }
 
 .singleArticle {
-  border: 2px solid #333;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  margin: 10px;
+	border: 2px solid #333;
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 20px;
+	margin: 10px;
 }
 .singleArticle button {
-  background-color: burlywood;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 10px;
+	background-color: burlywood;
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-right: 10px;
 }
 
 .singleArticle button:hover {
-  background-color: black;
+	background-color: black;
 }
 .singleArticle img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+	max-width: 100%;
+	height: auto;
+	border-radius: 10px;
 }
 
 .singleArticle h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+	font-size: 24px;
+	margin-bottom: 10px;
 }
 
 .singleArticle h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+	font-size: 18px;
+	margin-bottom: 10px;
 }
 
 .singleArticle p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 10px;
 }
 
 .singleArticle h4 {
-  font-size: 14px;
-  color: #666;
+	font-size: 14px;
+	color: #666;
 }
 
 .comment-container {
-  margin: 10px ;
+	margin: 10px;
 }
 
 .commentItem {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 15px;
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 15px;
+	margin-bottom: 15px;
 }
-.commentItem button{
-  font-weight: bold;
-  border-radius: 4px;
+.commentItem button {
+	font-weight: bold;
+	border-radius: 4px;
 }
 .commentItem button:hover {
-  background-color: rgb(248, 108, 108);
+	background-color: rgb(248, 108, 108);
 }
 
 .commentItem h5 {
-  font-size: 16px;
-  margin-bottom: 5px;
+	font-size: 16px;
+	margin-bottom: 5px;
 }
 
 .commentItem p {
-  font-size: 14px;
-  margin-bottom: 10px;
+	font-size: 14px;
+	margin-bottom: 10px;
 }
 
 .commentItem h6 {
-  font-size: 12px;
-  color: #888;
+	font-size: 12px;
+	color: #888;
 }
 .commentItem-New {
-  background-color: burlywood;
-  border: 1px solid #665857;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 15px;
+	background-color: burlywood;
+	border: 1px solid #665857;
+	border-radius: 10px;
+	padding: 15px;
+	margin-bottom: 15px;
 }
 
 .commentItem-New h4 {
-  font-size: 16px;
-  margin-bottom: 5px;
+	font-size: 16px;
+	margin-bottom: 5px;
 }
 .commentItem-New button {
-  background-color: white;
-  color: black;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 10px;
+	background-color: white;
+	color: black;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-right: 10px;
 }
 
 .commentItem-New button:hover {
-  background-color: black;
-  color: white;
+	background-color: black;
+	color: white;
 }
-.commentItem-New input{
-    width: 100%; 
-    min-height: 100px; 
-    padding: 8px; 
-    font-size: 16px; 
-    resize: vertical; 
-    box-sizing: border-box;
-    border-radius: 10px;
+.commentItem-New input {
+	width: 100%;
+	min-height: 100px;
+	padding: 8px;
+	font-size: 16px;
+	resize: vertical;
+	box-sizing: border-box;
+	border-radius: 10px;
 }
 
 .article-link {
-  text-decoration: none;
-  color: #333;
+	text-decoration: none;
+	color: #333;
 }
 
 .article-link:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
-.newComment{
-  margin: 10px;
-  font-size: 14px;
-  color: #666;
-
+.newComment {
+	margin: 10px;
+	font-size: 14px;
+	color: #666;
 }
 
 .posting-comment {
-  font-size: 50px;
-  font-weight: bold;
-  color: #333;
+	font-size: 50px;
+	font-weight: bold;
+	color: #333;
 }
 .Loading {
-  font-size: 50px;
-  font-weight: bold;
-  color: #333;
+	font-size: 50px;
+	font-weight: bold;
+	color: #333;
 }
 .posting-comment::after {
-  content: ".";
-  animation: dots 0.5s infinite;
+	content: '.';
+	animation: dots 0.5s infinite;
 }
 .Loading::after {
-  content: ".";
-  animation: dots 0.5s infinite;
+	content: '.';
+	animation: dots 0.5s infinite;
 }
 
 @keyframes dots {
-  0% {
-    content: ".";
-  }
-  25% {
-    content: "..";
-  }
-  50% {
-    content: "...";
-  }
-  75% {
-    content: "";
-  }
+	0% {
+		content: '.';
+	}
+	25% {
+		content: '..';
+	}
+	50% {
+		content: '...';
+	}
+	75% {
+		content: '';
+	}
 }
 
 .success-message {
-  color: green;
-  font-weight: bold;
+	color: green;
+	font-weight: bold;
 }
 .deleted-message {
-  color: red;
-  font-weight: bold;
+	color: red;
+	font-weight: bold;
 }
 .topics-container {
-  padding: 10px;
-  margin: 10px;
-  font-size: 30px;
+	padding: 10px;
+	margin: 10px;
+	font-size: 30px;
 }
 
 .topics-container ul {
-  display: grid;
-  line-height: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10%;
+	display: grid;
+	line-height: 1.5rem;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 10%;
 }
 
-
 .topics-container a {
-  text-decoration: none;
-  border-radius: 4px;
-  color: #dc4731;
+	text-decoration: none;
+	border-radius: 4px;
+	color: #dc4731;
 }
 
 .topics-container a:hover {
-  text-decoration: overline;
-  background-color: #dc4731; 
-  color: #fff3d9; 
+	text-decoration: overline;
+	background-color: #dc4731;
+	color: #fff3d9;
 }
 .selected {
-  background-color: #dc4731;
-  color: white;
-  border: 1px solid #333;
+	background-color: #dc4731;
+	color: white;
+	border: 1px solid #333;
 }
 
 .dropdown button {
-  cursor: pointer;
-  border-radius: 4px;
+	cursor: pointer;
+	border-radius: 4px;
 }
 
 .dropdown button.selected {
-  background-color: #dc4731;
-  color: white;
+	background-color: #dc4731;
+	color: white;
 }
