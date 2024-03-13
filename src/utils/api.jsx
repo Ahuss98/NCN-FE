@@ -2,6 +2,28 @@ import axios from 'axios';
 
 const BASE_URL = 'https://ncn-network.onrender.com/api/articles/';
 
+export const fetchUser1 =() => {
+	return axios
+	.get(`https://ncn-network.onrender.com/api/articles/9`)
+		.then((response) => {
+			return response.data
+		})
+		.catch((error) => {
+			console.error('Error fetching articles:', error);
+			throw error;
+		});
+}
+export const fetchUser2 =() => {
+	return axios
+	.get(`https://ncn-network.onrender.com/api/articles/34`)
+		.then((response) => {
+			return response.data
+		})
+		.catch((error) => {
+			console.error('Error fetching articles:', error);
+			throw error;
+		});
+}
 export const fetchArticles = () => {
 	return axios
 		.get(`${BASE_URL}`)
