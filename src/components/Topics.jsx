@@ -14,7 +14,6 @@ function Topics() {
 		setIsLoading(true);
 		fetchTopics()
 			.then((response) => {
-				console.log(response);
 				setTopics(response);
 				setIsLoading(false);
 			})

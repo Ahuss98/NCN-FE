@@ -209,7 +209,6 @@ function SingleArticle() {
 										comment.created_at
 									).toLocaleString()}
 								</h6>
-								{console.log(comment.comment_id)}
 								<button
 									onClick={() =>
 										deleteComment(comment.comment_id)
