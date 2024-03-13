@@ -53,6 +53,7 @@ h2 {
 
 .main-content {
 	margin-bottom: 40px;
+	padding: 10px;
 }
 
 
@@ -89,7 +90,6 @@ nav a.active {
 	border-radius: 10px;
 	padding: 12px;
 	text-decoration: none;
-	color: black;
 	transition: color 0.3s ease;
 }
 .article-link img {
@@ -121,7 +121,15 @@ nav a.active {
 	margin: 5px;
 }
 
+.preview{
+	color: black;
+	text-decoration: none;
+}
+.preview:hover{
+	color: white;
+	text-decoration: none;
 
+}
 
 .singleArticle {
 	border: 2px solid #333;
@@ -141,6 +149,7 @@ nav a.active {
 }
 .singleArticle button:hover {
 	background-color: black;
+	color: white;
 }
 .singleArticle img {
 	max-width: 100%;
@@ -249,10 +258,12 @@ nav a.active {
 .success-message {
 	color: green;
 	font-weight: bold;
+	padding: 10px;
 }
 .deleted-message {
 	color: red;
 	font-weight: bold;
+	padding: 10px;
 }
 
 .topics-container {

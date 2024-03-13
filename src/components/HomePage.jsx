@@ -36,14 +36,18 @@ function HomePage() {
 				<h2>Latest Articles</h2>
 				<div className="article-container">
 					<div className="article-link">
-						<Link to="/AllArticles/9">
+						<Link to="/AllArticles/9"
+						className='preview'
+						>
 							<img src={user1.article_img_url} />
 							<h3>{user1.title}</h3>
 							<p>{user1.author}</p>
 						</Link>
 					</div>
 					<div className="article-link">
-					<Link to="/AllArticles/34">
+					<Link to="/AllArticles/34"
+					className='preview'
+					>
 							<img src={user2.article_img_url} />
 							<h3>{user2.title}</h3>
 							<p>{user2.author}</p>
