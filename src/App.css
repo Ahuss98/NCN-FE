@@ -19,9 +19,28 @@
 	padding: 20px;
   }
   /*banner logo whatever*/
-  .banner{
+  .logo{
+	  display: inline-flex;
+	  font-size: 4vw;
+	  gap: 4px;
 	  
   }
+  .box-1{
+	color: white;
+	font-weight: bolder;
+	background-color: black;
+  }
+  .box-2{
+	color: white;
+	font-weight: bolder;
+	background-color: black;
+  }
+  .box-3{
+	color: white;
+	font-weight: bolder;
+	background-color: black;
+  }
+  
 
   /* Header styles */
   .header {
@@ -30,6 +49,7 @@
 	padding: 10px;
 	text-align: center;
   }
+
   
   /* Navigation styles */
   
@@ -140,6 +160,7 @@
   
   .singleArticle img {
 	width: 100%;
+	max-width: 1000px;
 	height: auto;
 	border-radius: 5px;
 	margin-bottom: 20px;
@@ -311,14 +332,14 @@
  .topics-container-list p{
 	border: solid rgb(224, 224, 224) 3px;
 	height: 10rem;
-	font-size: 6vw;
+	font-size: 3vw;
 	color: #000000;
 	background-color: rgb(78, 197, 82);
   }
   .topics-container-list p:hover{
 	text-decoration: overline 8px;
 	transform: translateY(-8px);
-	font-size: 8vw;
+	font-size: 5vw;
   }
   
   .dropdown button.selected {
@@ -355,7 +376,6 @@
 
 .header {
 	max-width: 100%;
-
 	font-size: 1.5vw;
 }
 
@@ -363,6 +383,7 @@
   .header span {
 	opacity: 0;
 	max-width: 100%;
+	padding: 0.5vw;
 
   }
   

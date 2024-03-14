@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import axios from 'axios';
 import { fetchUser1, fetchUser2 } from '../utils/api';
 
 function HomePage() {
