@@ -72,11 +72,10 @@ function SingleArticle() {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log('Submitting comment:', newUser, newBody);
 		setPosting(true);
 		postComment(article_id, newUser, newBody)
 			.then((response) => {
-				const updatedComments = [...comments, response];
+				const updatedComments = [ response,...comments];
 				setComments(updatedComments);
 				setNewBody('');
 				setPosting(false);

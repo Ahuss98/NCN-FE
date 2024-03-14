@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -14,12 +14,10 @@ function Topics() {
 		setIsLoading(true);
 		fetchTopics()
 			.then((response) => {
-				console.log(response);
 				setTopics(response);
 				setIsLoading(false);
 			})
 			.catch((error) => {
-				console.error('Error getting Topics', error);
 				setIsLoading(false);
 				setErrMsg('Error getting Topics');
 				setIsError(true);
@@ -42,13 +40,16 @@ function Topics() {
 	return (
 		<div className="topics-container">
 			<h3>Please select the intrested Topics</h3>
-			<ul>
+			<div className='topics-container-list'>
 				{topics.map((topic, index) => (
-					<Link to={`/Topics/${topic.slug}`} key={index}>
-						<li key={index}>{topic.slug}</li>
+					<Link to={`/Topics/${topic.slug}`} 
+					key={index}
+					className={topic.slug}
+					>
+						<p key={index}>{(topic.slug).toUpperCase()}</p>
 					</Link>
 				))}
-			</ul>
+			</div>
 		</div>
 	);
 }

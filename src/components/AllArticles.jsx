@@ -30,11 +30,11 @@ function AllArticles() {
 						key={index}
 						className="article-link">
 						<li className="articleLinkCard">
-							<p>{article.title}</p>
 							<img
 								src={article.article_img_url}
 								alt={article.title}
 							/>
+							<p>{article.title}</p>
 						</li>
 					</Link>
 				))}

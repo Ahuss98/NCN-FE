@@ -4,7 +4,7 @@ const BASE_URL = 'https://ncn-network.onrender.com/api/articles/';
 
 export const fetchUser1 =() => {
 	return axios
-	.get(`https://ncn-network.onrender.com/api/articles/9`)
+	.get(`https://ncn-network.onrender.com/api/articles/1`)
 		.then((response) => {
 			return response.data
 		})
@@ -15,7 +15,7 @@ export const fetchUser1 =() => {
 }
 export const fetchUser2 =() => {
 	return axios
-	.get(`https://ncn-network.onrender.com/api/articles/34`)
+	.get(`https://ncn-network.onrender.com/api/articles/21`)
 		.then((response) => {
 			return response.data
 		})
@@ -76,7 +76,7 @@ export const fetchArticle = (articleId) => {
 
 export const fetchComments = (articleId) => {
 	return axios
-		.get(`${BASE_URL}${articleId}/comments`)
+		.get(`${BASE_URL}${articleId}/comments?sort_by=created_at`)
 		.then((response) => {
 			return response.data;
 		})
