@@ -13,17 +13,7 @@ export const fetchUser1 =(numb) => {
 			throw error;
 		});
 }
-export const fetchUser2 =() => {
-	return axios
-	.get(`https://ncn-network.onrender.com/api/articles/21`)
-		.then((response) => {
-			return response.data
-		})
-		.catch((error) => {
-			console.error('Error fetching articles:', error);
-			throw error;
-		});
-}
+
 export const fetchAllUsers =() => {
 	return axios
 	.get(`https://ncn-network.onrender.com/api/users`)

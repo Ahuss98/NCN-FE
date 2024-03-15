@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { fetchUser1, fetchUser2 } from '../utils/api';
+import { fetchUser1} from '../utils/api';
 import {BsArrowLeftCircleFill,BsArrowRightCircleFill} from 'react-icons/bs'
 
 function HomePage() {
@@ -58,7 +58,7 @@ function HomePage() {
 		
 		}, []);
 
-	console.log(articles,',,,,articles in homepage')
+
 	if (isLoading) {
 		return <p className="Loading">LOADING</p>;
 	}
@@ -83,13 +83,17 @@ function HomePage() {
 					responsive experience to all our users!
 				</h4>
 				<h2>Popular Articles:</h2>
+				<div className='carousel-container'>
+
 
 				<div className="carousel" >
 					<BsArrowLeftCircleFill className='arrow arrow-left' onClick={previousSlide}/>
 						{articles.map((item,index) => {
-							{console.log(item),'inside the map'}
+							
 							return (
-								<Link to={`/AllArticles/${item.article_id}`}>
+								<Link to={`/AllArticles/${item.article_id}`}
+								key={index}
+								>
 								<img src={item.article_img_url} alt='item.title' key={index} className={slide === index ? 'slide' : 'slide slide-hidden'}/>
 								</Link>
 							)
@@ -101,6 +105,8 @@ function HomePage() {
 						})}
 					</span>
 				</div>
+				</div>
+				<h4 className="blurb">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus laboriosam saepe repudiandae aperiam ullam voluptas impedit, itaque natus culpa, repellendus architecto minima? Quo, sequi illo tenetur voluptatum eos labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, debitis repellat quis aliquid tempore necessitatibus, cum aut omnis odit voluptates, ducimus delectus illo nulla beatae atque exercitationem similique corrupti consectetur eaque quibusdam iusto ea nesciunt soluta sequi! Sint, omnis laborum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda maxime quibusdam beatae magnam ratione possimus doloremque ipsam dolores nisi officia accusamus, placeat ad rerum cumque culpa minus quod at soluta praesentium. Tempore quidem corrupti eaque quisquam culpa. Ipsam temporibus inventore aut fugiat, delectus repellendus rem molestias perferendis nulla mollitia. Sit, nobis nulla. Praesentium saepe asperiores vitae optio, nihil doloremque. Aperiam perferendis mollitia eius aliquid, laboriosam eum rerum magnam explicabo tempore recusandae voluptates, quaerat quidem nobis harum dolorem quam praesentium est culpa ad laborum consectetur quo? Odit rerum illum, iure ex repudiandae earum tenetur veritatis iusto, molestiae laudantium, nulla dolore consectetur?</h4>
 			</div>
 		</div>
 	);

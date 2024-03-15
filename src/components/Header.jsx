@@ -13,7 +13,6 @@ function Header() {
 		setIsLoading(true);
 		fetchAllUsers()
 			.then((data) => {
-				console.log(data, '<<data od users');
 				setIsLoading(false);
 				setUsers(data);
 			})
@@ -30,7 +29,6 @@ function Header() {
 		);
 		setSelectedUser(selectedUser);
 	};
-	console.log(users);
 
 	if (isLoading) {
 		return <p className="Loading">LOADING</p>;
@@ -47,7 +45,6 @@ function Header() {
 				<div className="current-login">
 					{selectedUser ? (
 						<>
-							{console.log(selectedUser)}
 							<p>{selectedUser.name}</p>
 							<img
 								src={selectedUser.avatar_url}
