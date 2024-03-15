@@ -67,7 +67,7 @@ function ArticleByTopic() {
 
 	return (
 		<div className="articles-container">
-			<h2>Here are the items for sale in {topic} category</h2>
+			<h2>Here are the articels about {topic}</h2>
 			<div className="dropdown">
 				<label htmlFor="sort">Sort By:</label>
 				<select

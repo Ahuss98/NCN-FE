@@ -24,6 +24,18 @@ export const fetchUser2 =() => {
 			throw error;
 		});
 }
+export const fetchAllUsers =() => {
+	return axios
+	.get(`https://ncn-network.onrender.com/api/users`)
+	.then((response) => {
+		return response.data
+	})
+	.catch((error) => {
+		console.error('Error fetching users:', error);
+			throw error;
+	})
+}
+
 export const fetchArticles = () => {
 	return axios
 		.get(`${BASE_URL}`)
