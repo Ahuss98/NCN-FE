@@ -101,7 +101,7 @@ function HomePage() {
 					<BsArrowRightCircleFill className='arrow arrow-right' onClick={nextSlide}/>
 					<span className='indicators'>
 						{articles.map((_, index) => {
-							return <button key={index} onClick={null} className={slide === index ? 'indicator' : 'indicator indicator-inactive' }></button>
+							return <button key={index} onClick={() => {setSlide(index)}} className={slide === index ? 'indicator' : 'indicator indicator-inactive' }></button>
 						})}
 					</span>
 				</div>

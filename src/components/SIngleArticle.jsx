@@ -17,7 +17,6 @@ function SingleArticle() {
 	const [deleting, setDeleting] = useState(false);
 	const [isPosted, setIsPosted] = useState(false);
 	const [posting, setPosting] = useState(false);
-	const [newUser, setNewUser] = useState('grumpy19');
 	const {selectedUser, setSelectedUser} = useContext(UserContext);
 	const [newBody, setNewBody] = useState('');
 	const [article, setArticle] = useState({});
