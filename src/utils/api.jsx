@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const BASE_URL = 'https://ncn-network.onrender.com/api/articles/';
 
-export const fetchUser1 =() => {
+export const fetchUser1 =(numb) => {
 	return axios
-	.get(`https://ncn-network.onrender.com/api/articles/1`)
+	.get(`https://ncn-network.onrender.com/api/articles/${numb}`)
 		.then((response) => {
 			return response.data
 		})

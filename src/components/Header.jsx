@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { fetchAllUsers } from '../utils/api';
+import { useContext } from 'react';
+import { UserContext } from '../components/Login'
+
 
 function Header() {
 	const [users, setUsers] = useState([]);
-	const [selectedUser, setSelectedUser] = useState(users[0]);
+	const {selectedUser, setSelectedUser} = useContext(UserContext);
 	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {

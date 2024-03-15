@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../components/Login'
 
 import {
 	fetchArticle,
@@ -16,6 +18,7 @@ function SingleArticle() {
 	const [isPosted, setIsPosted] = useState(false);
 	const [posting, setPosting] = useState(false);
 	const [newUser, setNewUser] = useState('grumpy19');
+	const {selectedUser, setSelectedUser} = useContext(UserContext);
 	const [newBody, setNewBody] = useState('');
 	const [article, setArticle] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +26,8 @@ function SingleArticle() {
 	const [isError, setIsError] = useState(false);
 	const [errMsg, setErrMsg] = useState('');
 
+
+	console.log(selectedUser,'<<<<in the single article page')
 	useEffect(() => {
 		setIsLoading(true);
 		fetchArticle(article_id)
@@ -73,7 +78,7 @@ function SingleArticle() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		setPosting(true);
-		postComment(article_id, newUser, newBody)
+		postComment(article_id, selectedUser.username, newBody)
 			.then((response) => {
 				const updatedComments = [ response,...comments];
 				setComments(updatedComments);
