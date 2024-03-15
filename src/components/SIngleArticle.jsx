@@ -190,9 +190,9 @@ function SingleArticle() {
 								id="comment"
 								value={newBody}
 								onChange={(event) =>
-									setNewBody(event.target.value)
+									selectedUser ? setNewBody(event.target.value) : null
 								}
-								placeholder="Enter your comment"
+								placeholder={selectedUser ? 'Enter Your Comment': 'Please select a user from the top right'}
 							/>
 							<button type="submit">Post Comment</button>
 						</form>
