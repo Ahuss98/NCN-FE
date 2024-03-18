@@ -2,7 +2,7 @@
 # Northcoders News Network
 
 **Link to Deployed Front-End:**  
-[https://ncn-network.netlify.app/AllArticles/6](https://ncn-network.netlify.app/AllArticles/6)
+[https://ncn-network.netlify.app](https://ncn-network.netlify.app) <--- this will take a while to spin up on first attempt
 
 **Link to Back-End Repo:**  
 [https://github.com/Ahuss98/NCN-BE](https://github.com/Ahuss98/NCN-BE)
