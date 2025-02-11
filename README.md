@@ -1,17 +1,33 @@
 
-# Northcoders News Network
+# **Northcoders News Network** 📰
 
-**Link to Deployed Front-End:**  
-[https://ncn-network.netlify.app](https://ncn-network.netlify.app) <--- this will take a while to spin up on first attempt
+[![Node.js](https://img.shields.io/badge/Node.js-v21.5.0-blue.svg)](https://nodejs.org/)  
+🚀 **Live Front-End Deployment:**  
+🔗 [NCN Network](https://ncn-network.netlify.app) *(Note: May take a while to spin up on the first attempt.)*
 
-**Link to Back-End Repo:**  
-[https://github.com/Ahuss98/NCN-BE](https://github.com/Ahuss98/NCN-BE)
+🔧 **Back-End Repository:**  
+🔗 [NCN Back-End Repo](https://github.com/Ahuss98/NCN-BE)
 
+---
 
+## **📌 About the Project**
+Welcome to **The NorthCoders News Network**—my first **fully functional front-end project** built from scratch!  
+This is the **front end** for my **NC-News back-end**, which you can find in my repository linked above.  
 
-**Summary:**  
-welcome to The NorthCoders News Network, this is my very first fully fucntional front end project built from scratch. this is the front end to my back end for NC-news which you can also find on my repo. This was built weith React and gives you the ability to browse through viewing articles / sort articles and even post/view comments on articles.
+### **Features**
+✅ **View & Sort Articles** – Browse through news articles and sort them by different criteria.  
+✅ **Post & View Comments** – Engage with articles by commenting and reading discussions.  
+✅ **Seamless Navigation** – Built with **React Router** for a smooth user experience.  
 
+This project is built with **React** and interacts with my **custom-built back-end API**.
+
+---
+
+## **🛠 Setup Instructions**
+### **📌 Minimum Node.js Version**
+Ensure you have the required Node.js version installed:
+
+Node.js Version: v21.5.0
 ## Instructions
 
 ### Minimum Versions of node
